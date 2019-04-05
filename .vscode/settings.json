@@ -2,5 +2,6 @@
     "cSpell.words": [
         "helloworld",
         "microservices"
-    ]
+    ],
+    "git.ignoreLimitWarning": true,
 }

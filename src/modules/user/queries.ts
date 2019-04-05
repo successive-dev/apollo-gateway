@@ -1,16 +1,9 @@
 import axios from 'axios';
 
 const Query = {
-  helloworld: () => {
-    axios
-      .get('http://localhost:9000/api/user')
-      .then((response) => {
-        console.log(response.data);
-        return response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  helloworld: async () => {
+    const { data } = await axios.get('http://localhost:9000/api/user');
+    return data;
   },
 };
 export default Query;
