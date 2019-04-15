@@ -1,4 +1,7 @@
 type Query {
-    helloworld: String
-    # user(id: Int): User
+    getUsers: [User]
+}
+
+type Mutation {
+    addUser(data: IData): User
 }

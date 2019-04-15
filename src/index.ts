@@ -8,6 +8,6 @@ const schema = {
     resolvers: mergeResolver(modules),
     typeDefs: mergeSchema(resolve(__dirname, '../../src/**/*.graphql')),
 };
-
+console.log(schema);
 const server = new Server(configuration);
 server.setupApolloServer({schema: makeExecutableSchema(schema)});
