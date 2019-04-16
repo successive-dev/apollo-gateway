@@ -4,7 +4,7 @@ const pubsub = new PubSub();
 
 const Subscription = {
   newPost: {
-    subscribe: () => { pubsub.asyncIterator('NEW_POST'); },
+    subscribe: () => pubsub.asyncIterator('NEW_POST'),
   },
 };
 

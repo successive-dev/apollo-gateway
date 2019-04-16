@@ -16,7 +16,8 @@ export default class Server {
       context: ({ req }) => {
         console.log('context running');
         // get the user token from the headers
-        const token = req.headers.authorization || '';
+        // const token = req.headers.authorization || '';
+        const token = '';
         // try to retrieve a user with the token
         const sub  = fetchUser(token).then( (res) => {
           console.log(res);
@@ -32,9 +33,11 @@ export default class Server {
     this.run();
   }
   public async run() {
-    this.app.listen(this.config.port, () => {
+    const s = this.app.listen(this.config.port, () => {
       console.log(`Listening on port: ${this.config.port}`);
     });
+    this.server.installSubscriptionHandlers(s);
+
   }
   public initCors() {
     const corsOptions = {
