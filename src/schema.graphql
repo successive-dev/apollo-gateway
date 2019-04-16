@@ -6,5 +6,9 @@ type Query {
 type Mutation {
     addUser(data: IData): User
     addPost(text: String): Post
-    updatePost(id: String, dataToUpdate: String): Post
+    updatePost(id: String, text: String): Post
+}
+
+type Subscription {
+    newPost: Post 
 }

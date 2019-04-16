@@ -1,7 +1,7 @@
 scalar Date
 
 type Post {
-  originalId: String
+  id: String
   likes: [String]
   text: String
   createdAt: Date

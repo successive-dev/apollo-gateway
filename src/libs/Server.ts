@@ -11,17 +11,6 @@ export default class Server {
     this.app = express();
   }
   public setupApolloServer(schema: any) {
-    // console.log({...schema, ...{
-    //   context: async ({ req }) => {
-    //     console.log('context running');
-    //     // get the user token from the headers
-    //     const token = req.headers.authorization || '';
-    //     // try to retrieve a user with the token
-    //     const sub  = await fetchUser(token);
-    //     // add the user to the context
-    //     return { sub };
-    //   },
-    // }})
     const { app } = this;
     this.server = new ApolloServer({...schema, ...{
       context: ({ req }) => {

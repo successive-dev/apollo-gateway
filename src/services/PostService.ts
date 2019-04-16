@@ -13,7 +13,7 @@ class PostService {
         post,
       },
     );
-    console.log('post-create post- microservice arch');
+    console.log('post-create post-microservice arch');
     return data;
   }
 
@@ -24,12 +24,13 @@ class PostService {
     return data;
   }
 
-  public async updatePost(id: string, dataToUpdate: string) {
-    const result = await axios.put(
+  public async updatePost(id: string, text: string) {
+    const dataToUpdate = { text };
+    const { data } = await axios.put(
       `http://localhost:${postServicePort}/api/post`,
       { id, dataToUpdate },
     );
-    return result.data;
+    return data;
   }
 }
 
