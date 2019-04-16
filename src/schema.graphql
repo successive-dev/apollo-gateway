@@ -1,7 +1,10 @@
 type Query {
     getUsers: [User]
+    getPosts: [Post]
 }
 
 type Mutation {
     addUser(data: IData): User
+    addPost(text: String): Post
+    updatePost(id: String, dataToUpdate: String): Post
 }

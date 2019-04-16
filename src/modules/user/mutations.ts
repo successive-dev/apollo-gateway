@@ -1,8 +1,7 @@
-import { userService } from '../../services/user';
+import { userService } from '../../services';
 
 const Mutation = {
-  addUser: async (parent: any, args: any) => {
-    console.log('Mutation reached');
+  addUser: async (parent: any, args: any, context: any) => {
     const { data } = args;
     return userService.createUser(data);
   },

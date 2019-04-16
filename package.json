@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@okta/jwt-verifier": "0.0.14",
     "@types/dotenv": "^6.1.1",
     "@types/glob": "^7.1.1",
     "@types/mongoose": "^5.3.24",

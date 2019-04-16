@@ -1,4 +1,4 @@
-import { userService } from '../../services/user';
+import { userService } from '../../services';
 
 const Query = {
   getUsers: async () => {

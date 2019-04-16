@@ -1,0 +1,10 @@
+scalar Date
+
+type Post {
+  originalId: String
+  likes: [String]
+  text: String
+  createdAt: Date
+  createdBy: String
+  isLiked: Boolean
+}
