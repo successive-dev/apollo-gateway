@@ -1,10 +1,8 @@
-scalar Date
-
 type Post {
   id: String
   likes: [String]
   text: String
-  createdAt: Date
+  createdAt: String
   createdBy: String
   isLiked: Boolean
 }
