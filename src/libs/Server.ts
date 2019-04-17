@@ -15,9 +15,15 @@ export default class Server {
     this.server = new ApolloServer({...schema, ...{
       context: ({ req }) => {
         console.log('context running');
+        let token = '';
+        try {
+          token = req.headers.authorization || '';
+        } catch ( err ) {
+          token = '';
+          console.log('empty token');
+        }
         // get the user token from the headers
-        // const token = req.headers.authorization || '';
-        const token = '';
+        // const token = '';
         // try to retrieve a user with the token
         const sub  = fetchUser(token).then( (res) => {
           console.log(res);
