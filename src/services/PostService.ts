@@ -10,16 +10,34 @@ class PostService {
     const { data } = await axios.post(
       `http://localhost:${postServicePort}/api/post`,
       {
-        post,
-      },
+        post
+      }
     );
     console.log('post-create post-microservice arch');
     return data;
   }
 
+  public async like(id: string, likedBy: string) {
+    console.log('Inside like pre');
+    const { data } = await axios.post(
+      `http://localhost:${postServicePort}/api/post/like`,
+      { id, likedBy },
+    );
+    console.log('PostService.ts', data);
+    return data;
+  }
+  public async dislike(id: string, likedBy: string) {
+    console.log('Inside like pre');
+    const { data } = await axios.post(
+      `http://localhost:${postServicePort}/api/post/dislike`,
+      { id, likedBy },
+    );
+    console.log('PostService.ts', data);
+    return data;
+  }
   public async getPosts() {
     const { data } = await axios.get(
-      `http://localhost:${postServicePort}/api/post`,
+      `http://localhost:${postServicePort}/api/post`
     );
     return data;
   }
@@ -28,7 +46,7 @@ class PostService {
     const dataToUpdate = { text };
     const { data } = await axios.put(
       `http://localhost:${postServicePort}/api/post`,
-      { id, dataToUpdate },
+      { id, dataToUpdate }
     );
     return data;
   }

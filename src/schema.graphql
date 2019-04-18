@@ -7,6 +7,8 @@ type Mutation {
     addUser(data: IData): User
     addPost(text: String): Post
     updatePost(id: String, text: String): Post
+    like(id: String): Post
+    dislike(id: String): Post    
 }
 
 type Subscription {

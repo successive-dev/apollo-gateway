@@ -1,5 +1,5 @@
 import { PubSub } from 'apollo-server-express';
-
+console.log('subscription.ts');
 const pubsub = new PubSub();
 
 const Subscription = {

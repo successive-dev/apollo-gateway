@@ -25,12 +25,7 @@ export default class Server {
         // get the user token from the headers
         // const token = '';
         // try to retrieve a user with the token
-        const sub  = fetchUser(token).then( (res) => {
-          console.log(res);
-          return res;
-        }).catch((err) => {
-          throw new Error(err.message);
-        });
+        const sub  = fetchUser(token);
         // add the user to the context
         return { sub };
       },

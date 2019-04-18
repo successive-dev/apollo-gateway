@@ -12,9 +12,22 @@ const Mutation = {
     pubsub.publish('NEW_POST', {newPost});
     return newPost;
   },
+  dislike: async (parent: any, args: any, context: any) => {
+    const sub = await context.sub;
+    const { id } = args;
+    return postService.dislike(id, sub);
+  },
+  like: async (parent: any, args: any, context: any) => {
+    const sub = await context.sub;
+    const { id } = args;
+    console.log({ id, sub });
+    return postService.like(id, sub);
+  },
   updatePost: async (parent: any, args: any, context: any) => {
     const { id, text } = args;
-    return postService.updatePost(id, text);
+    const updatedPost = postService.updatePost(id, text);
+    pubsub.publish('NEW_POST', {newPost: updatedPost});
+    return updatedPost;
   },
 };
 
